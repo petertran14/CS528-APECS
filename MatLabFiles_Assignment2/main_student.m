@@ -81,7 +81,7 @@ end
 % Uncomment these lines to run each classifier
 
 % Run Kth Nearest Neighbor Classifier
-%run_knn_classifier(featureMartix);
+run_knn_classifier(featureMartix);
 
 % Run Random Forest Classifier
 %run_random_forest_classifer(featureMartix);
@@ -355,61 +355,61 @@ function [stationary_cf, stationary_metric, walking_cf, walking_metric, walking_
     elevator_down_F1 = 2 * (elevator_down_recall * elevator_down_prec) / (elevator_down_recall + elevator_down_prec);
     running_F1 = 2 * (running_recall * running_prec) / (running_recall + running_prec);
     
-    Stationary = ["Predicted Positive";"Predicted Negative"];
+    Decline_Bench = ["Predicted Positive";"Predicted Negative"];
     Actual_Positive = [stationary_TP;stationary_FN];
     Actual_Negative = [stationary_FP;stationary_TN];
-    confusion_matrix_stationary = table(Stationary,Actual_Positive,Actual_Negative);
-    Stationary_Metrics = ["Accuracy";"Precision";"Recall";"F1 Score"];
+    confusion_matrix_stationary = table(Decline_Bench,Actual_Positive,Actual_Negative);
+    Decline_Bench_Metrics = ["Accuracy";"Precision";"Recall";"F1 Score"];
     Result = [stationary_acc;stationary_prec;stationary_recall;stationary_F1];
-    confusion_matrix_stationary_metric = table(Stationary_Metrics,Result);
+    confusion_matrix_stationary_metric = table(Decline_Bench_Metrics,Result);
     
-    Walking = ["Predicted Positive";"Predicted Negative"];
+    Flat_Bench = ["Predicted Positive";"Predicted Negative"];
     Actual_Positive = [walking_TP;walking_FN];
     Actual_Negative = [walking_FP;walking_TN];
-    confusion_matrix_walking = table(Walking,Actual_Positive,Actual_Negative);
-    Walking_Metrics = ["Accuracy";"Precision";"Recall";"F1 Score"];
+    confusion_matrix_walking = table(Flat_Bench,Actual_Positive,Actual_Negative);
+    Flat_Bench_Metrics = ["Accuracy";"Precision";"Recall";"F1 Score"];
     Result = [walking_acc;walking_prec;walking_recall;walking_F1];
-    confusion_matrix_walking_metric = table(Walking_Metrics,Result);
+    confusion_matrix_walking_metric = table(Flat_Bench_Metrics,Result);
     
-    Walking_Upstairs = ["Predicted Positive";"Predicted Negative"];
+    Bicep_Curl = ["Predicted Positive";"Predicted Negative"];
     Actual_Positive = [walking_upstairs_TP;walking_upstairs_FN];
     Actual_Negative = [walking_upstairs_FP;walking_upstairs_TN];
-    confusion_matrix_walking_upstairs = table(Walking_Upstairs,Actual_Positive,Actual_Negative);
-    Walking_Upstairs_Metrics = ["Accuracy";"Precision";"Recall";"F1 Score"];
+    confusion_matrix_walking_upstairs = table(Bicep_Curl,Actual_Positive,Actual_Negative);
+    Bicep_Curl_Metrics = ["Accuracy";"Precision";"Recall";"F1 Score"];
     Result = [walking_upstairs_acc;walking_upstairs_prec;walking_upstairs_recall;walking_upstairs_F1];
-    confusion_matrix_walking_upstairs_metric = table(Walking_Upstairs_Metrics,Result);
+    confusion_matrix_walking_upstairs_metric = table(Bicep_Curl_Metrics,Result);
     
-    Walking_Downstairs = ["Predicted Positive";"Predicted Negative"];
+    Military_Press = ["Predicted Positive";"Predicted Negative"];
     Actual_Positive = [walking_downstairs_TP;walking_downstairs_FN];
     Actual_Negative = [walking_downstairs_FP;walking_downstairs_TN];
-    confusion_matrix_walking_downstairs = table(Walking_Downstairs,Actual_Positive,Actual_Negative);
-    Walking_Downstairs_Metrics = ["Accuracy";"Precision";"Recall";"F1 Score"];
+    confusion_matrix_walking_downstairs = table(Military_Press,Actual_Positive,Actual_Negative);
+    Military_Press_Metrics = ["Accuracy";"Precision";"Recall";"F1 Score"];
     Result = [walking_downstairs_acc;walking_downstairs_prec;walking_downstairs_recall;walking_downstairs_F1];
-    confusion_matrix_walking_downstairs_metric = table(Walking_Downstairs_Metrics,Result);
+    confusion_matrix_walking_downstairs_metric = table(Military_Press_Metrics,Result);
     
-    Elevator_Up = ["Predicted Positive";"Predicted Negative"];
+    Pullup = ["Predicted Positive";"Predicted Negative"];
     Actual_Positive = [elevator_up_TP;elevator_up_FN];
     Actual_Negative = [elevator_up_FP;elevator_up_TN];
-    confusion_matrix_elevator_up = table(Elevator_Up,Actual_Positive,Actual_Negative);
-    Elevator_Up_Metrics = ["Accuracy";"Precision";"Recall";"F1 Score"];
+    confusion_matrix_elevator_up = table(Pullup,Actual_Positive,Actual_Negative);
+    Pullup_Metrics = ["Accuracy";"Precision";"Recall";"F1 Score"];
     Result = [elevator_up_acc;elevator_up_prec;elevator_up_recall;elevator_up_F1];
-    confusion_matrix_elevator_up_metric = table(Elevator_Up_Metrics,Result);
+    confusion_matrix_elevator_up_metric = table(Pullup_Metrics,Result);
 
-    Elevator_Down = ["Predicted Positive";"Predicted Negative"];
+    Dips = ["Predicted Positive";"Predicted Negative"];
     Actual_Positive = [elevator_down_TP;elevator_down_FN];
     Actual_Negative = [elevator_down_FP;elevator_down_TN];
-    confusion_matrix_elevator_down = table(Elevator_Down,Actual_Positive,Actual_Negative);
-    Elevator_Down_Metrics = ["Accuracy";"Precision";"Recall";"F1 Score"];
+    confusion_matrix_elevator_down = table(Dips,Actual_Positive,Actual_Negative);
+    Dips_Metrics = ["Accuracy";"Precision";"Recall";"F1 Score"];
     Result = [elevator_down_acc;elevator_down_prec;elevator_down_recall;elevator_down_F1];
-    confusion_matrix_elevator_down_metric = table(Elevator_Down_Metrics,Result);
+    confusion_matrix_elevator_down_metric = table(Dips_Metrics,Result);
 
-    Running = ["Predicted Positive";"Predicted Negative"];
+    Chest_Fly = ["Predicted Positive";"Predicted Negative"];
     Actual_Positive = [running_TP;running_FN];
     Actual_Negative = [running_FP;running_TN];
-    confusion_matrix_running = table(Running,Actual_Positive,Actual_Negative);
-    Running_Metrics = ["Accuracy";"Precision";"Recall";"F1 Score"];
+    confusion_matrix_running = table(Chest_Fly,Actual_Positive,Actual_Negative);
+    Chest_Fly_Metrics = ["Accuracy";"Precision";"Recall";"F1 Score"];
     Result = [running_acc;running_prec;running_recall;running_F1];
-    confusion_matrix_running_metric = table(Running_Metrics,Result);
+    confusion_matrix_running_metric = table(Chest_Fly_Metrics,Result);
 
     stationary_cf = confusion_matrix_stationary;
     walking_cf = confusion_matrix_walking;
